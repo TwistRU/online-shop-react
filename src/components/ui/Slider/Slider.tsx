@@ -13,11 +13,18 @@ import s from './Slider.module.scss';
 export const Slider = ({categories}: {categories: CategoryType[]}) => {
   return (
     <Swiper
-      spaceBetween={15}
       slidesPerView={"auto"}
       navigation={true}
       modules={[Navigation]}
       className={s.slider}
+      breakpoints={{
+        320:{
+          spaceBetween: 5,
+        },
+        481:{
+          spaceBetween: 15,
+        }
+      }}
     >
       {categories.map(item => (
         <SwiperSlide key={item.id} className={s.slide}>
