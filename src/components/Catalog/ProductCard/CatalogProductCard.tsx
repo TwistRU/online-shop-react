@@ -13,7 +13,7 @@ type ItemCardProps = {
   type: string,
 };
 
-const CatalogProductCard = (props: ItemCardProps) => {
+export const CatalogProductCard = (props: ItemCardProps) => {
   const {
     img, title, price, brand, sku, type,
   } = props;
@@ -52,5 +52,3 @@ const CatalogProductCard = (props: ItemCardProps) => {
     </div>
   );
 };
-
-export default CatalogProductCard;

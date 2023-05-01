@@ -1,8 +1,8 @@
 import React from 'react';
 import s from './CatalogProductCardList.module.scss';
-import {BrandType, ProductType} from "../../types";
-import CatalogProductCard from "./CatalogProductCard/CatalogProductCard";
-import {getBrandNameById} from "../../functions";
+import {BrandType, ProductType} from "../../../types";
+import {CatalogProductCard} from "../ProductCard/CatalogProductCard";
+import {getBrandNameById} from "../../../functions";
 
 type ItemCardListProps = {
   products: ProductType[],

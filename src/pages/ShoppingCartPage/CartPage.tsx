@@ -4,7 +4,7 @@ import sBtn from '../../components/ui/Button/Button.module.scss';
 import {Header} from "../../components/Header/Header";
 import {Footer} from "../../components/Footer/Footer";
 import {useCartState} from "../../context/shopping-cart/Context";
-import {CartProductCard} from "../../components/CartProductCard/CartProductCard";
+import {CartProductCard} from "../../components/Cart/ProductCard/CartProductCard";
 import cn from "classnames";
 import {Link} from "react-router-dom";
 

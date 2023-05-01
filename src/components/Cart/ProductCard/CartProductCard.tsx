@@ -1,8 +1,8 @@
 import React from 'react';
 import s from './CartProductCard.module.scss';
-import {PriceType, ProductCartType} from "../../types";
-import {InputStepper} from "../ui/Stepper/InputStepper";
-import {CartRemoveIcon} from "../ui/icons/CartRemoveIcon";
+import {PriceType, ProductCartType} from "../../../types";
+import {InputStepper} from "../../ui/Stepper/InputStepper";
+import {CartRemoveIcon} from "../../ui/icons/CartRemoveIcon";
 
 type CartProductCardProps = {
   img: string,

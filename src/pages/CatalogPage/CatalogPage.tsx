@@ -5,7 +5,7 @@ import {Header} from "../../components/Header/Header";
 import {getData} from "../../requets";
 import {Select} from "../../components/ui/Select/Select";
 import {Footer} from "../../components/Footer/Footer";
-import {CatalogProductCardList} from "../../components/catalogProductCardList/CatalogProductCardList";
+import {CatalogProductCardList} from "../../components/Catalog/ProductCardList/CatalogProductCardList";
 import {Pagination} from "../../components/ui/Pagination/Pagination";
 import {CategoryType, ProductType} from "../../types";
 import {getBrandIdByName} from "../../functions";
