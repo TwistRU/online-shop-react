@@ -12,10 +12,13 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin: -88px auto 100px;
+      margin: -96px auto 100px;
       height: 900px;
       max-width: 1440px;
       background: transparent url('../../assets/images/background-main.jpg') no-repeat center center / cover;
+      @media (max-width: 550px) {
+        margin-top: -73px;
+      }
       .title {
         margin-bottom: 20px;
         color: #FFFFFF;

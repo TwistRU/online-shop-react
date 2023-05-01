@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './Header.module.scss';
 import cn from 'classnames'
 import {LogoIcon} from "../ui/icons/LogoIcon";
@@ -17,12 +17,27 @@ export const Header = (props: HeaderProps):JSX.Element => {
     styled,
   } = props;
 
+  const [isListShown, setListShow] = useState(false);
+
   const {state: {cart}} = useCartState();
+
+  const handleListOpen = () => {
+    setListShow(!isListShown);
+  }
+
+  const burgerOpen = (
+    <div className={cn(s.burger)} onClick={handleListOpen}>
+      <span className={cn(s.burgerLine, s.topLine, { [s.styled]: styled, [s.close]: isListShown })}></span>
+      <span className={cn(s.burgerLine, s.middleLine, { [s.styled]: styled, [s.close]: isListShown })}></span>
+      <span className={cn(s.burgerLine, s.bottomLine, { [s.styled]: styled, [s.close]: isListShown })}></span>
+    </div>
+  )
 
   return (
     <header className={cn('container', s.header)}>
       <nav className={s.nav}>
-        <ul className={cn(s.list, s.listLeft)}>
+        {burgerOpen}
+        <ul className={cn(s.list, s.listCategories, { [s.opened]: isListShown })}>
           {headerLinks.map((item) => (
             <li className={s.listItem} key={item.id}>
               <Link to={item.link} className={cn(s.link, { [s.styled]: styled } )}>
@@ -31,10 +46,10 @@ export const Header = (props: HeaderProps):JSX.Element => {
             </li>
           ))}
         </ul>
-          <Link to='/'>
-            <LogoIcon className={cn(s.logo, { [s.styled]: styled })} />
-          </Link>
-        <ul className={s.listRight}>
+        <Link to='/' className={cn(s.logoLink)}>
+          <LogoIcon className={cn(s.logo, { [s.styled]: styled })} />
+        </Link>
+        <ul className={s.listIcons}>
           <li className={s.listItem}>
             <Link to='/cart' className={s.cartLink}>
               {!!cart.length && <span className={s.itemsNumber}>{cart.length}</span>}
