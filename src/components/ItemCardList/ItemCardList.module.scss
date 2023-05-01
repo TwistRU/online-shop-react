@@ -1,0 +1,10 @@
+.cardList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .card {
+    &:not(:nth-child(3n)) {
+      margin-right: 15px;
+    }
+  }
+}

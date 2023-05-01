@@ -4,7 +4,7 @@ import s from "./Footer.module.scss";
 import {InstaFooterIcon} from "../ui/icons/InstaFooterIcon";
 import {TelegramFooterIcon} from "../ui/icons/TelegramFooterIcon";
 import {Link} from "react-router-dom";
-import {footerBlocks} from "../../data";
+import {footerBlocks} from "../../data/data";
 
 export const Footer = ():JSX.Element => {
   return (

@@ -13,7 +13,7 @@ export const HomePage = ():JSX.Element => {
         <div className={s.promo}>
           <h2 className={cn('mainTitle', s.title)}> Новая коллекция</h2>
           <span className={s.line}></span>
-          <Link to='/' className={s.link}>Смотреть Новинки</Link>
+          <Link to='/catalog' className={s.link}>Смотреть Новинки</Link>
         </div>
       </main>
       <Footer />

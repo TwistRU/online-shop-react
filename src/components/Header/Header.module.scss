@@ -1,6 +1,6 @@
 .header {
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: 34px;
+  padding-bottom: 34px;
   .nav {
     position: relative;
     display: flex;
@@ -12,7 +12,11 @@
           font-size: 18px;
           font-weight: 300;
           line-height: 21px;
+          text-transform: uppercase;
           color: #FFFFFF;
+          &.styled {
+            color: #252525;
+          }
         }
       }
     }
@@ -26,10 +30,24 @@
     .logo {
       position: absolute;
       left: 43%;
+      &.styled {
+        path {
+          fill: #E0BEA2;
+        }
+      }
     }
     .listRight {
       justify-self: flex-end;
       margin-left: auto;
+      .shoppingCart {
+        &.styled {
+          g {
+            path {
+              fill: #E0BEA2;
+            }
+          }
+        }
+      }
     }
   }
 }
