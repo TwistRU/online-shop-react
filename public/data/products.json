@@ -8,8 +8,9 @@
       "currency": "USD",
       "value": 27.12
     },
-    "image": "/images/1.png",
-    "brand": 9
+    "image": "/images/1.jpg",
+    "brand": 9,
+    "category": 1
   },
   {
     "type": "simple",
@@ -20,8 +21,9 @@
       "currency": "USD",
       "value": 36.87
     },
-    "image": "/images/2.png",
-    "brand": 8
+    "image": "/images/2.jpg",
+    "brand": 8,
+    "category": 1
   },
   {
     "type": "simple",
@@ -32,8 +34,9 @@
       "currency": "USD",
       "value": 28.91
     },
-    "image": "/images/3.png",
-    "brand": 2
+    "image": "/images/3.jpg",
+    "brand": 2,
+    "category": 1
   },
   {
     "type": "simple",
@@ -44,8 +47,9 @@
       "currency": "USD",
       "value": 41.23
     },
-    "image": "/images/4.png",
-    "brand": 7
+    "image": "/images/4.jpg",
+    "brand": 7,
+    "category": 2
   },
   {
     "type": "simple",
@@ -56,8 +60,9 @@
       "currency": "USD",
       "value": 88.00
     },
-    "image": "/images/5.png",
-    "brand": 3
+    "image": "/images/5.jpg",
+    "brand": 3,
+    "category": 2
   },
   {
     "type": "simple",
@@ -68,8 +73,9 @@
       "currency": "USD",
       "value": 127.41
     },
-    "image": "/images/6.png",
-    "brand": 6
+    "image": "/images/6.jpg",
+    "brand": 6,
+    "category": 3
   },
   {
     "type": "simple",
@@ -80,8 +86,9 @@
       "currency": "USD",
       "value": 123.40
     },
-    "image": "/images/7.png",
-    "brand": 5
+    "image": "/images/7.jpg",
+    "brand": 5,
+    "category": 4
   },
   {
     "type": "simple",
@@ -92,8 +99,9 @@
       "currency": "USD",
       "value": 92.32
     },
-    "image": "/images/8.png",
-    "brand": 1
+    "image": "/images/8.jpg",
+    "brand": 1,
+    "category": 5
   },
   {
     "type": "simple",
@@ -104,8 +112,9 @@
       "currency": "USD",
       "value": 53.40
     },
-    "image": "/images/9.png",
-    "brand": 2
+    "image": "/images/9.jpg",
+    "brand": 2,
+    "category": 6
   },
   {
     "type": "simple",
@@ -116,8 +125,9 @@
       "currency": "USD",
       "value": 53.40
     },
-    "image": "/images/9.png",
-    "brand": 2
+    "image": "/images/9.jpg",
+    "brand": 2,
+    "category": 7
   },
   {
     "type": "simple",
@@ -128,8 +138,9 @@
       "currency": "USD",
       "value": 53.40
     },
-    "image": "/images/9.png",
-    "brand": 2
+    "image": "/images/9.jpg",
+    "brand": 2,
+    "category": 8
   },
   {
     "type": "simple",
@@ -140,8 +151,9 @@
       "currency": "USD",
       "value": 53.40
     },
-    "image": "/images/9.png",
-    "brand": 2
+    "image": "/images/9.jpg",
+    "brand": 2,
+    "category": 9
   },
   {
     "type": "simple",
@@ -152,8 +164,9 @@
       "currency": "USD",
       "value": 53.40
     },
-    "image": "/images/9.png",
-    "brand": 2
+    "image": "/images/9.jpg",
+    "brand": 2,
+    "category": 9
   },
   {
     "type": "simple",
@@ -164,7 +177,8 @@
       "currency": "USD",
       "value": 53.40
     },
-    "image": "/images/9.png",
-    "brand": 2
+    "image": "/images/9.jpg",
+    "brand": 2,
+    "category": 8
   }
 ]
