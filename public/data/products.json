@@ -106,5 +106,65 @@
     },
     "image": "/images/9.png",
     "brand": 2
+  },
+  {
+    "type": "simple",
+    "id": 10,
+    "sku": "s9",
+    "title": "Product 10",
+    "regular_price": {
+      "currency": "USD",
+      "value": 53.40
+    },
+    "image": "/images/9.png",
+    "brand": 2
+  },
+  {
+    "type": "simple",
+    "id": 11,
+    "sku": "s9",
+    "title": "Product 11",
+    "regular_price": {
+      "currency": "USD",
+      "value": 53.40
+    },
+    "image": "/images/9.png",
+    "brand": 2
+  },
+  {
+    "type": "simple",
+    "id": 12,
+    "sku": "s9",
+    "title": "Product 12",
+    "regular_price": {
+      "currency": "USD",
+      "value": 53.40
+    },
+    "image": "/images/9.png",
+    "brand": 2
+  },
+  {
+    "type": "simple",
+    "id": 13,
+    "sku": "s9",
+    "title": "Product 13",
+    "regular_price": {
+      "currency": "USD",
+      "value": 53.40
+    },
+    "image": "/images/9.png",
+    "brand": 2
+  },
+  {
+    "type": "simple",
+    "id": 14,
+    "sku": "s9",
+    "title": "Product 14",
+    "regular_price": {
+      "currency": "USD",
+      "value": 53.40
+    },
+    "image": "/images/9.png",
+    "brand": 2
   }
 ]

@@ -63,7 +63,7 @@ export const headerLinks = [
     link: '/catalog',
   },
   {
-    id: '1',
+    id: '3',
     title: 'О нас',
     link: '/',
   }
