@@ -24,6 +24,7 @@ export const ItemCardList = (props: ItemCardListProps):JSX.Element => {
             title={item.title}
             price={item.regular_price}
             brand={getBrandNameById(item.brand, brands)}
+            sku={item.sku}
           />
         </li>
       ))}

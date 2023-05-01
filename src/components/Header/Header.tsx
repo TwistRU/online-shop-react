@@ -5,6 +5,7 @@ import {LogoIcon} from "../ui/icons/LogoIcon";
 import {Link} from "react-router-dom";
 import {ShoppingCartIcon} from "../ui/icons/ShoppingCartIcon";
 import {headerLinks} from "../../data/data";
+import {useCartState} from "../../context/shopping-cart/Context";
 
 type HeaderProps = {
   styled?: boolean,
@@ -14,6 +15,9 @@ export const Header = (props: HeaderProps):JSX.Element => {
   const {
     styled,
   } = props;
+
+  // @ts-ignore
+  const {state: {cart}} = useCartState();
 
   return (
     <header className={cn('container', s.header)}>
@@ -27,12 +31,13 @@ export const Header = (props: HeaderProps):JSX.Element => {
             </li>
           ))}
         </ul>
-        <Link to='/'>
-          <LogoIcon className={cn(s.logo, { [s.styled]: styled })} />
-        </Link>
+          <Link to='/'>
+            <LogoIcon className={cn(s.logo, { [s.styled]: styled })} />
+          </Link>
         <ul className={s.listRight}>
           <li className={s.listItem}>
-            <Link to='/'>
+            <Link to='/basket' className={s.cartLink}>
+              {!!cart.length && <span className={s.itemsNumber}>{cart.length}</span>}
               <ShoppingCartIcon className={cn(s.shoppingCart, { [s.styled]: styled })} />
             </Link>
           </li>

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {createContext, useEffect, useState} from 'react';
 import s from './CatalogPage.module.scss'
 import cn from "classnames";
 import {Header} from "../../components/Header/Header";
@@ -8,7 +8,7 @@ import {Footer} from "../../components/Footer/Footer";
 import {ItemCardList} from "../../components/ItemCardList/ItemCardList";
 import {Pagination} from "../../components/ui/Pagination/Pagination";
 import {ProductType} from "../../types";
-import {getBrandIdByName, getBrandNameById} from "../../functions";
+import {getBrandIdByName} from "../../functions";
 
 export const ITEMS_PER_PAGE = 6;
 

@@ -7,8 +7,8 @@
   .infoContainer {
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 15px 0;
-    text-align: center;
     .title {
       display: inline-block;
       margin-bottom: 5px;
@@ -30,7 +30,11 @@
       }
     }
     .brand {
+      margin-bottom: 20px;
       color: rgba(37, 37, 37, 0.5);
+    }
+    .btn {
+      min-width: 170px;
     }
   }
 }

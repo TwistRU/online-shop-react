@@ -39,6 +39,24 @@
     .listRight {
       justify-self: flex-end;
       margin-left: auto;
+      .cartLink {
+        position: relative;
+        .itemsNumber {
+          position: absolute;
+          top: -20px;
+          right: -5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 1px 3px 3px;
+          min-width: 20px;
+          min-height: 20px;
+          line-height: 1;
+          background-color: #FFFFFF;
+          border-radius: 100%;
+          border: 1px solid #CCA88A;
+        }
+      }
       .shoppingCart {
         &.styled {
           g {
