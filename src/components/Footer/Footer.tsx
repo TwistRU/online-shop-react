@@ -5,24 +5,19 @@ import {InstaFooterIcon} from "../ui/icons/InstaFooterIcon";
 import {TelegramFooterIcon} from "../ui/icons/TelegramFooterIcon";
 import {Link} from "react-router-dom";
 import {footerBlocks} from "../../data/data";
+import ArrowIcon from "../ui/icons/ArrowIcon";
+import {FooterBlock} from "./FooterBlock/FooterBlock";
 
 export const Footer = ():JSX.Element => {
   return (
     <footer className={cn('container', s.footer)}>
       {footerBlocks.map((item) => (
-          <div className={s.footerBlock} key={item.id}>
-            <h5 className={cn('h5', s.title)}>{item.title}</h5>
-            <ul className={s.footerList}>
-              {item.links.map((link) => (
-                  <li className={s.footerListItem}>
-                    <Link to={link.link} className={s.footerText}>{link.title}</Link>
-                  </li>
-              ))}
-            </ul>
-          </div>
+        <FooterBlock item={item}/>
       ))}
-      <div className={s.footerBlock}>
-        <h5 className={cn('h5', s.title)}>Контакты</h5>
+      <div className={cn(s.footerBlock, s.full)}>
+        <span className={s.titleContainer}>
+          <h5 className={cn('h5', s.title)}>Контакты</h5>
+        </span>
         <div className={s.socialMedias}>
           <InstaFooterIcon className={s.icon} />
           <TelegramFooterIcon className={s.icon} />

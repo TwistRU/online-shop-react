@@ -57,3 +57,9 @@ export type CategoryType = {
   title: string,
   img: string,
 }
+
+export type FooterInfo = {
+  id: string,
+  title: string,
+  links: { title: string, link: string }[]
+}
