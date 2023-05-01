@@ -1,38 +1,47 @@
 [
   {
     "id": 1,
-    "title": "Куртки"
+    "title": "Куртки",
+    "img": "/images/category_1.jpg"
   },
   {
     "id": 2,
-    "title": "Юбки"
+    "title": "Юбки",
+    "img": "/images/category_2.jpg"
   },
   {
     "id": 3,
-    "title": "Штаны"
+    "title": "Штаны",
+    "img": "/images/category_3.jpg"
   },
   {
     "id": 4,
-    "title": "Блузы"
+    "title": "Блузы",
+    "img": "/images/category_4.jpg"
   },
   {
     "id": 5,
-    "title": "Футболки"
+    "title": "Футболки",
+    "img": "/images/category_1.jpg"
   },
   {
     "id": 6,
-    "title": "Пальто"
+    "title": "Пальто",
+    "img": "/images/category_2.jpg"
   },
   {
     "id": 7,
-    "title": "Платья"
+    "title": "Платья",
+    "img": "/images/category_3.jpg"
   },
   {
     "id": 8,
-    "title": "Обувь"
+    "title": "Обувь",
+    "img": "/images/category_2.jpg"
   },
   {
     "id": 9,
-    "title": "Аксессуары"
+    "title": "Аксессуары",
+    "img": "/images/category_1.jpg"
   }
 ]

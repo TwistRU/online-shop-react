@@ -1,0 +1,28 @@
+.categoryCard {
+  position: relative;
+  width: 274px;
+  height: 450px;
+  cursor: pointer;
+  .img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 274px;
+    height: 450px;
+  }
+  .title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 8px;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    background: rgba(224, 190, 162, 0.75);
+    color: #FFFFFF;
+  }
+}

@@ -78,3 +78,15 @@ button {
   font-weight: 300;
   color: #252525;
 }
+
+.swiper {
+  .swiper-button-prev, .swiper-button-next {
+    color: #FFFFFF;
+    margin-left: 20px;
+    &::after {
+      font-size: 21px;
+      padding: 8px 13px;
+      background-color: #E0BEA2;
+    }
+  }
+}

@@ -1,11 +1,18 @@
 .home {
   .main {
+    .homeTitle {
+      margin-bottom: 50px;
+      font-weight: 300;
+      font-size: 36px;
+      line-height: 42px;
+      color: #252525;
+    }
     .promo {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin: -88px auto 0;
+      margin: -88px auto 100px;
       height: 900px;
       max-width: 1440px;
       background: transparent url('../../assets/images/background-main.jpg') no-repeat center center / cover;
@@ -25,6 +32,11 @@
         font-weight: 300;
         color: #FFFFFF;
         text-transform: uppercase;
+      }
+    }
+    .categories {
+      .title {
+        margin-bottom: 50px;
       }
     }
   }

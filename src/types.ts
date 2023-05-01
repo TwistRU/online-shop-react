@@ -55,4 +55,5 @@ export type CartStateType = {
 export type CategoryType = {
   id: number,
   title: string,
+  img: string,
 }
