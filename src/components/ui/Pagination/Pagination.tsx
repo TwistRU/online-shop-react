@@ -43,7 +43,7 @@ export const Pagination = (props: PaginationProps) => {
   }
 
   return (
-    <div className={s.pagination}>
+    <div className={cn(s.pagination, { [s.hidden]: pagesNumber === 1 })}>
       <div
         className={cn(s.arrowContainer, s.arrowLeftContainer, { [s.disabled]: currentPage === 1 })}
         onClick={handleBackClick}

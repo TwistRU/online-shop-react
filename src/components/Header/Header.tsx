@@ -27,7 +27,9 @@ export const Header = (props: HeaderProps):JSX.Element => {
             </li>
           ))}
         </ul>
-        <LogoIcon className={cn(s.logo, { [s.styled]: styled })} />
+        <Link to='/'>
+          <LogoIcon className={cn(s.logo, { [s.styled]: styled })} />
+        </Link>
         <ul className={s.listRight}>
           <li className={s.listItem}>
             <Link to='/'>

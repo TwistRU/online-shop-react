@@ -6,46 +6,56 @@ import {BrandType} from "../../../types";
 
 type SelectProps = {
   selectItems: BrandType[],
-  selectTitle: string,
+  selectDefaultTitle: string,
+  handleChoose: (chosenOptions: string[]) => void,
 };
 
 export const Select = (props: SelectProps) => {
   const {
     selectItems,
-    selectTitle,
+    selectDefaultTitle,
+    handleChoose,
   } = props;
 
-  const [selectedValue, setSelectedValue] = useState(selectTitle);
+  const [selectTitle, setSelectTitle] = useState(selectDefaultTitle);
+  const [selectedValues, setSelectedValues] = useState<string[]>([]);
   const [isSelectOpened, setSelectOpen] = useState(false);
 
   const handleSelectOpen = (e: any) => {
-    console.log(e)
     setSelectOpen(!isSelectOpened)
   };
 
   const handleOptionClick = (e: any) => {
-    console.log(e.target.innerText)
-    setSelectedValue(e.target.innerText);
-    setSelectOpen(!isSelectOpened);
+    const option = e.target.innerText;
+    const optionIndex = selectedValues.indexOf(option);
+    let newValue = [...selectedValues];
+    if (optionIndex === -1) {
+      newValue.push(option);
+    } else {
+      newValue.splice(optionIndex, 1);
+    }
+    setSelectTitle(`${newValue.length} of ${selectItems.length} selected`)
+    setSelectedValues(newValue);
+    handleChoose(newValue);
   };
 
   return (
     <div className={cn(s.selectWrapper, { [s.open]: isSelectOpened })}>
       <div className={s.select}>
         <div className={s.selectTrigger} onClick={handleSelectOpen}>
-          <span className={s.selectedValue}>{selectedValue}</span>
+          <span className={s.selectedValue}>{selectTitle}</span>
           <img src={arrow} alt='' className={cn(s.arrow, { [s.open]: isSelectOpened })}/>
         </div>
         <div className={s.customOptions}>
           {selectItems.map((item) => (
-              <span
-                key={item.id}
-                className={cn(s.customOption)}
-                data-value={item.title}
-                onClick={handleOptionClick}
-              >
-                {item.title}
-              </span>
+            <span
+              key={item.id}
+              className={cn(s.customOption, { [s.active]: selectedValues.includes(item.title) })}
+              data-value={item.title}
+              onClick={handleOptionClick}
+            >
+              {item.title}
+            </span>
           ))}
         </div>
       </div>
