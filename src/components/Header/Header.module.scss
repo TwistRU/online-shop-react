@@ -1,0 +1,35 @@
+.header {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  .nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    .list {
+      display: flex;
+      .listItem {
+        .link {
+          font-size: 18px;
+          font-weight: 300;
+          line-height: 21px;
+          color: #FFFFFF;
+        }
+      }
+    }
+    .listLeft {
+      justify-self: flex-start;
+      margin-right: auto;
+      .listItem:not(:last-child) {
+        margin-right: 25px;
+      }
+    }
+    .logo {
+      position: absolute;
+      left: 43%;
+    }
+    .listRight {
+      justify-self: flex-end;
+      margin-left: auto;
+    }
+  }
+}
