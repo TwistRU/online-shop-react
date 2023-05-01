@@ -1,4 +1,4 @@
-import React, {createContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './CatalogPage.module.scss'
 import cn from "classnames";
 import {Header} from "../../components/Header/Header";

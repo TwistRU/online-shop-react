@@ -4,7 +4,7 @@
     "id": 1,
     "sku": "s1",
     "title": "Product 1",
-    "regular_price": {
+    "price": {
       "currency": "USD",
       "value": 27.12
     },
@@ -16,7 +16,7 @@
     "id": 2,
     "sku": "s2",
     "title": "Product 2",
-    "regular_price": {
+    "price": {
       "currency": "USD",
       "value": 36.87
     },
@@ -28,7 +28,7 @@
     "id": 3,
     "sku": "s3",
     "title": "Product 3",
-    "regular_price": {
+    "price": {
       "currency": "USD",
       "value": 28.91
     },
@@ -40,7 +40,7 @@
     "id": 4,
     "sku": "s4",
     "title": "Product 4",
-    "regular_price": {
+    "price": {
       "currency": "USD",
       "value": 41.23
     },
@@ -52,7 +52,7 @@
     "id": 5,
     "sku": "s5",
     "title": "Product 5",
-    "regular_price": {
+    "price": {
       "currency": "USD",
       "value": 88.00
     },
@@ -64,7 +64,7 @@
     "id": 6,
     "sku": "s6",
     "title": "Product 6",
-    "regular_price": {
+    "price": {
       "currency": "USD",
       "value": 127.41
     },
@@ -76,7 +76,7 @@
     "id": 7,
     "sku": "s7",
     "title": "Product 7",
-    "regular_price": {
+    "price": {
       "currency": "USD",
       "value": 123.40
     },
@@ -88,7 +88,7 @@
     "id": 8,
     "sku": "s8",
     "title": "Product 8",
-    "regular_price": {
+    "price": {
       "currency": "USD",
       "value": 92.32
     },
@@ -100,7 +100,7 @@
     "id": 9,
     "sku": "s9",
     "title": "Product 9",
-    "regular_price": {
+    "price": {
       "currency": "USD",
       "value": 53.40
     },
@@ -112,7 +112,7 @@
     "id": 10,
     "sku": "s10",
     "title": "Product 10",
-    "regular_price": {
+    "price": {
       "currency": "USD",
       "value": 53.40
     },
@@ -124,7 +124,7 @@
     "id": 11,
     "sku": "s11",
     "title": "Product 11",
-    "regular_price": {
+    "price": {
       "currency": "USD",
       "value": 53.40
     },
@@ -136,7 +136,7 @@
     "id": 12,
     "sku": "s12",
     "title": "Product 12",
-    "regular_price": {
+    "price": {
       "currency": "USD",
       "value": 53.40
     },
@@ -148,7 +148,7 @@
     "id": 13,
     "sku": "s13",
     "title": "Product 13",
-    "regular_price": {
+    "price": {
       "currency": "USD",
       "value": 53.40
     },
@@ -160,7 +160,7 @@
     "id": 14,
     "sku": "s14",
     "title": "Product 14",
-    "regular_price": {
+    "price": {
       "currency": "USD",
       "value": 53.40
     },

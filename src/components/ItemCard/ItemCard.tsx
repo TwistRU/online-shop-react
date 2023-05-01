@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './ItemCard.module.scss';
-import {PriceType} from "../../types";
+import {PriceType, ProductCartType} from "../../types";
 import {useCartState} from "../../context/shopping-cart/Context";
 import {Button} from "../ui/Button/Button";
 
@@ -10,18 +10,18 @@ type ItemCardProps = {
   price: PriceType,
   brand: string,
   sku: string,
+  type: string,
 };
 
 const ItemCard = (props: ItemCardProps) => {
   const {
-    img, title, price, brand, sku
+    img, title, price, brand, sku, type,
   } = props;
 
   const {
-    // @ts-ignore
     state: { cart },
-    // @ts-ignore
-    dispatch,
+    addItem,
+    removeItem
   } = useCartState();
 
   const isItemInCart = () => {
@@ -29,13 +29,9 @@ const ItemCard = (props: ItemCardProps) => {
   }
 
   const handleCartChange = () => {
-    dispatch({
-      type: isItemInCart() ? 'REMOVE_FROM_CART' : 'ADD_TO_CART',
-      item: {title, price, sku},
-    })
+    const params: ProductCartType = {title, price, sku, image: img};
+    isItemInCart() ? removeItem(params) : addItem(params)
   }
-
-  //console.log(cart)
 
   return (
     <div className={s.itemCard}>

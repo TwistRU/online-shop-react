@@ -16,7 +16,6 @@ export const Header = (props: HeaderProps):JSX.Element => {
     styled,
   } = props;
 
-  // @ts-ignore
   const {state: {cart}} = useCartState();
 
   return (

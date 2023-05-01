@@ -1,9 +1,12 @@
-import React, {createContext, useCallback, useContext, useEffect, useReducer, useState} from 'react';
-import {CartActionsType, CartContextType, CartType} from "../../types";
-import {getData} from "../../requets";
+import React, {createContext, useCallback, useContext, useReducer} from 'react';
+import {CartContextType} from "../../types";
 import {cartReducer} from "./Reducer";
 
-const CartContext = createContext([]);
+const CartContext = createContext<CartContextType>({
+  state: {cart: []},
+  addItem: () => null,
+  removeItem: () => null,
+});
 
 export const CartContextComponent = ({children}: {children: React.ReactNode}) => {
   const [state, dispatch] = useReducer(cartReducer, {
@@ -17,9 +20,15 @@ export const CartContextComponent = ({children}: {children: React.ReactNode}) =>
     [dispatch]
   );
 
+  const removeItem = useCallback<CartContextType['removeItem']>(
+      (params) => {
+        dispatch({ type: "REMOVE_FROM_CART", item: {...params }});
+      },
+      [dispatch]
+  );
+
   return (
-      // @ts-ignore
-    <CartContext.Provider value={{ state, dispatch }}>
+    <CartContext.Provider value={{ state, addItem, removeItem }}>
       {children}
     </CartContext.Provider>
   );

@@ -10,7 +10,7 @@ export type ProductType = {
   type: string,
   sku: string,
   title: string,
-  regular_price: {
+  price: {
     currency: string,
     value: number,
   },
@@ -23,36 +23,27 @@ export type PriceType = {
   value: number,
 }
 
-export type CartType = {
-  image: string,
+export type ProductCartType = {
+  sku: string,
   title: string,
-  regular_price: {
+  price: {
     currency: string,
     value: number,
   },
-  sku: string,
-  quantity: number,
+  image: string,
 }
 
-export type AddCartItemProps = {
-  sku: string,
-  quantity: number
-}
-
-export type RemoveCartItemProps = {
-  sku: string,
-  quantity: number
-}
+export type CartType =  ProductCartType & {quantity: number};
 
 export type CartContextType = {
-  cart: CartType[],
-  addItem: (params: CartType) => void,
-  removeItem: (params: CartType) => void,
+  state: CartStateType,
+  addItem: (params: ProductCartType) => void,
+  removeItem: (params: ProductCartType) => void,
 }
 
 export type CartActionsType =
-    {type: 'ADD_TO_CART'} & {item: CartType} |
-    {type: 'REMOVE_FROM_CART'} & {item: CartType};
+    {type: 'ADD_TO_CART'} & {item: ProductCartType} |
+    {type: 'REMOVE_FROM_CART'} & {item: ProductCartType};
 
 export type CartStateType = {
   cart: CartType[],

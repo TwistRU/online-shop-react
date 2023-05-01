@@ -14,6 +14,7 @@ export const ItemCardList = (props: ItemCardListProps):JSX.Element => {
     products, brands,
   } = props;
 
+  console.log(brands)
   return (
     <ul className={s.cardList}>
       {products.map((item) => (
@@ -22,9 +23,10 @@ export const ItemCardList = (props: ItemCardListProps):JSX.Element => {
             key={item.id}
             img={item.image}
             title={item.title}
-            price={item.regular_price}
+            price={item.price}
             brand={getBrandNameById(item.brand, brands)}
             sku={item.sku}
+            type={item.type}
           />
         </li>
       ))}
