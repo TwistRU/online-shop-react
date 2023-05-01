@@ -6,6 +6,7 @@ const CartContext = createContext<CartContextType>({
   state: {cart: []},
   addItem: () => null,
   removeItem: () => null,
+  changeQuantity: () => null,
 });
 
 export const CartContextComponent = ({children}: {children: React.ReactNode}) => {
@@ -13,22 +14,20 @@ export const CartContextComponent = ({children}: {children: React.ReactNode}) =>
     cart: [],
   });
 
-  const addItem = useCallback<CartContextType['addItem']>(
-    (params) => {
-      dispatch({ type: "ADD_TO_CART", item : {...params} });
-    },
-    [dispatch]
-  );
+  const addItem = (params: any) => {
+    dispatch({ type: "ADD_TO_CART", item : {...params} });
+  };
 
-  const removeItem = useCallback<CartContextType['removeItem']>(
-      (params) => {
-        dispatch({ type: "REMOVE_FROM_CART", item: {...params }});
-      },
-      [dispatch]
-  );
+  const removeItem = (params: any) => {
+    dispatch({type: "REMOVE_FROM_CART", item: {...params}})
+  }
+
+  const changeQuantity = (params: any, step: number) => {
+    dispatch({type: "CHANGE_QUANTITY", step: step, item: {...params}})
+  }
 
   return (
-    <CartContext.Provider value={{ state, addItem, removeItem }}>
+    <CartContext.Provider value={{ state, addItem, removeItem, changeQuantity }}>
       {children}
     </CartContext.Provider>
   );

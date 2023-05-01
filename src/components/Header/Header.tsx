@@ -7,6 +7,7 @@ import {ShoppingCartIcon} from "../ui/icons/ShoppingCartIcon";
 import {headerLinks} from "../../data/data";
 import {useCartState} from "../../context/shopping-cart/Context";
 
+
 type HeaderProps = {
   styled?: boolean,
 };
@@ -35,7 +36,7 @@ export const Header = (props: HeaderProps):JSX.Element => {
           </Link>
         <ul className={s.listRight}>
           <li className={s.listItem}>
-            <Link to='/basket' className={s.cartLink}>
+            <Link to='/cart' className={s.cartLink}>
               {!!cart.length && <span className={s.itemsNumber}>{cart.length}</span>}
               <ShoppingCartIcon className={cn(s.shoppingCart, { [s.styled]: styled })} />
             </Link>

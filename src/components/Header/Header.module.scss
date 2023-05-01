@@ -30,6 +30,7 @@
     .logo {
       position: absolute;
       left: 43%;
+      top: -5px;
       &.styled {
         path {
           fill: #E0BEA2;
@@ -44,7 +45,7 @@
         .itemsNumber {
           position: absolute;
           top: -20px;
-          right: -5px;
+          right: -10px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -55,6 +56,24 @@
           background-color: #FFFFFF;
           border-radius: 100%;
           border: 1px solid #CCA88A;
+          animation: appear .4s;
+          @keyframes appear {
+            0% {
+              top: -12px
+            }
+            30% {
+              top: -25px;
+            }
+            65% {
+              top: -16px;
+            }
+            80% {
+              top: -22px;
+            }
+            100% {
+              top: -20px;
+            }
+          }
         }
       }
       .shoppingCart {

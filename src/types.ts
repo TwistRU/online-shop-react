@@ -39,11 +39,13 @@ export type CartContextType = {
   state: CartStateType,
   addItem: (params: ProductCartType) => void,
   removeItem: (params: ProductCartType) => void,
+  changeQuantity: (params: ProductCartType, step: number) => void,
 }
 
 export type CartActionsType =
     {type: 'ADD_TO_CART'} & {item: ProductCartType} |
-    {type: 'REMOVE_FROM_CART'} & {item: ProductCartType};
+    {type: 'REMOVE_FROM_CART'} & {item: ProductCartType} |
+    {type: 'CHANGE_QUANTITY'} & {item: ProductCartType} & {step:number};
 
 export type CartStateType = {
   cart: CartType[],

@@ -5,7 +5,7 @@ import {Header} from "../../components/Header/Header";
 import {getData} from "../../requets";
 import {Select} from "../../components/ui/Select/Select";
 import {Footer} from "../../components/Footer/Footer";
-import {ItemCardList} from "../../components/ItemCardList/ItemCardList";
+import {CatalogProductCardList} from "../../components/catalogProductCardList/CatalogProductCardList";
 import {Pagination} from "../../components/ui/Pagination/Pagination";
 import {ProductType} from "../../types";
 import {getBrandIdByName} from "../../functions";
@@ -66,7 +66,7 @@ export const CatalogPage = ():JSX.Element => {
             handleChoose={handleSelectChoose}
           />
         </div>
-        <ItemCardList products={getProductsPerPage()} brands={brands} />
+        <CatalogProductCardList products={getProductsPerPage()} brands={brands} />
         <Pagination
           currentPage={currentPage}
           handleClick={handlePaginationClick}

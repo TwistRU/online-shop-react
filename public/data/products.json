@@ -3,7 +3,7 @@
     "type": "simple",
     "id": 1,
     "sku": "s1",
-    "title": "Product 1",
+    "title": "Белая куртка",
     "price": {
       "currency": "USD",
       "value": 27.12

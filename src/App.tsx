@@ -6,7 +6,6 @@ import {CatalogPage} from "./pages/CatalogPage/CatalogPage";
 import {CartPage} from "./pages/ShoppingCartPage/CartPage";
 import {CartContextComponent} from "./context/shopping-cart/Context";
 
-
 function App() {
   return (
     <div className="App">

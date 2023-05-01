@@ -1,8 +1,8 @@
 import React from 'react';
-import s from './ItemCard.module.scss';
-import {PriceType, ProductCartType} from "../../types";
-import {useCartState} from "../../context/shopping-cart/Context";
-import {Button} from "../ui/Button/Button";
+import s from './CatalogProductCard.module.scss';
+import {PriceType, ProductCartType} from "../../../types";
+import {useCartState} from "../../../context/shopping-cart/Context";
+import {Button} from "../../ui/Button/Button";
 
 type ItemCardProps = {
   img: string,
@@ -13,7 +13,7 @@ type ItemCardProps = {
   type: string,
 };
 
-const ItemCard = (props: ItemCardProps) => {
+const CatalogProductCard = (props: ItemCardProps) => {
   const {
     img, title, price, brand, sku, type,
   } = props;
@@ -53,4 +53,4 @@ const ItemCard = (props: ItemCardProps) => {
   );
 };
 
-export default ItemCard;
+export default CatalogProductCard;
