@@ -16,6 +16,7 @@ export type ProductType = {
   },
   image: string,
   brand: number,
+  category: number,
 }
 
 export type PriceType = {
@@ -49,4 +50,9 @@ export type CartActionsType =
 
 export type CartStateType = {
   cart: CartType[],
+}
+
+export type CategoryType = {
+  id: number,
+  title: string,
 }

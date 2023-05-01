@@ -1,5 +1,28 @@
-.selectContainer {
-  position: relative;
-  height: 25px;
-  margin-bottom: 30px;
+.contentContainer {
+  display: flex;
+  .categoriesColumn {
+    max-width: 150px;
+    width: 100%;
+    .title {
+      margin-bottom: 30px;
+    }
+    .categories {
+      .link {
+        display: inline-block;
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: 300;
+        color: #252525;
+        &.active {
+          color: #E0BEA2;
+        }
+      }
+    }
+  }
+  .selectContainer {
+    position: relative;
+    height: 25px;
+    margin-bottom: 30px;
+  }
 }

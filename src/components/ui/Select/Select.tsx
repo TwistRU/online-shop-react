@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './Select.module.scss'
 import cn from "classnames";
 import arrow from '../../../assets/images/selectArrow.svg'
@@ -8,6 +8,7 @@ type SelectProps = {
   selectItems: BrandType[],
   selectDefaultTitle: string,
   handleChoose: (chosenOptions: string[]) => void,
+  selectedValues: string[],
 };
 
 export const Select = (props: SelectProps) => {
@@ -15,11 +16,17 @@ export const Select = (props: SelectProps) => {
     selectItems,
     selectDefaultTitle,
     handleChoose,
+    selectedValues,
   } = props;
 
   const [selectTitle, setSelectTitle] = useState(selectDefaultTitle);
-  const [selectedValues, setSelectedValues] = useState<string[]>([]);
   const [isSelectOpened, setSelectOpen] = useState(false);
+
+  useEffect(() => {
+    if (!selectedValues.length) {
+      setSelectTitle(selectDefaultTitle);
+    }
+  },[selectedValues])
 
   const handleSelectOpen = (e: any) => {
     setSelectOpen(!isSelectOpened)
@@ -35,7 +42,6 @@ export const Select = (props: SelectProps) => {
       newValue.splice(optionIndex, 1);
     }
     setSelectTitle(`${newValue.length} of ${selectItems.length} selected`)
-    setSelectedValues(newValue);
     handleChoose(newValue);
   };
 

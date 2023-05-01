@@ -1,5 +1,5 @@
 export const getData = async (path: string) => {
-  return fetch(`data/${path}`
+  return fetch(`http://localhost:3000/data/${path}`
     , {
       headers: {
         'Content-Type': 'application/json',

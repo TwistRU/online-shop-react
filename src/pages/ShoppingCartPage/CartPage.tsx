@@ -13,7 +13,7 @@ export const CartPage = ():JSX.Element => {
 
   const fullCartData = () => (
     <>
-      <h2 className={s.title}>Ваш заказ</h2>
+      <h2 className={'pageTitle'}>Ваш заказ</h2>
       <ul className={cn('list-reset')}>
         {cart.map((item) => (
           <CartProductCard
