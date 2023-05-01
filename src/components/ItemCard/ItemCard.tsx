@@ -31,7 +31,7 @@ const ItemCard = (props: ItemCardProps) => {
   const handleCartChange = () => {
     dispatch({
       type: isItemInCart() ? 'REMOVE_FROM_CART' : 'ADD_TO_CART',
-      payload: {title, price, sku},
+      item: {title, price, sku},
     })
   }
 

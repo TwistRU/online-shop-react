@@ -46,10 +46,14 @@ export type RemoveCartItemProps = {
 
 export type CartContextType = {
   cart: CartType[],
-  addItem: (params: AddCartItemProps) => void,
-  removeItem: (params: RemoveCartItemProps) => void,
+  addItem: (params: CartType) => void,
+  removeItem: (params: CartType) => void,
 }
 
 export type CartActionsType =
     {type: 'ADD_TO_CART'} & {item: CartType} |
     {type: 'REMOVE_FROM_CART'} & {item: CartType};
+
+export type CartStateType = {
+  cart: CartType[],
+}
