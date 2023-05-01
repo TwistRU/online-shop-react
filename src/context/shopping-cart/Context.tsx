@@ -1,4 +1,4 @@
-import React, {createContext, useCallback, useContext, useReducer} from 'react';
+import React, {createContext, useContext, useReducer} from 'react';
 import {CartContextType} from "../../types";
 import {cartReducer} from "./Reducer";
 

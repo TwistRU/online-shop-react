@@ -9,7 +9,6 @@ const changeQuantity = (cart: CartType[], product: ProductCartType, step: number
     newCart[itemIndex] = newItem;
   }
   return newCart;
-  return cart;
 }
 
 export const cartReducer = (state: CartStateType, action: CartActionsType): CartStateType => {
