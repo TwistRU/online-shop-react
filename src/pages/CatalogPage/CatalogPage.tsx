@@ -11,8 +11,6 @@ import {CategoryType, ProductType} from "../../types";
 import {getBrandIdByName} from "../../functions";
 import {Link} from "react-router-dom";
 import { useParams } from "react-router-dom";
-import axios from "axios";
-import {TRUE} from "sass";
 
 export const ITEMS_PER_PAGE = 6;
 
