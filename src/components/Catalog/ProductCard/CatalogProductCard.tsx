@@ -1,21 +1,20 @@
 import React from 'react';
 import s from './CatalogProductCard.module.scss';
-import {PriceType, ProductCartType} from "../../../types";
+import {ProductCartType} from "../../../types";
 import {useCartState} from "../../../context/shopping-cart/Context";
 import {Button} from "../../ui/Button/Button";
 
 type ItemCardProps = {
   img: string,
   title: string,
-  price: PriceType,
+  price: number,
   brand: string,
-  sku: string,
-  type: string,
+  article: string,
 };
 
 export const CatalogProductCard = (props: ItemCardProps) => {
   const {
-    img, title, price, brand, sku, type,
+    img, title, price, brand, article
   } = props;
 
   const {
@@ -25,11 +24,11 @@ export const CatalogProductCard = (props: ItemCardProps) => {
   } = useCartState();
 
   const isItemInCart = () => {
-    return cart.some((item: any) => item.sku === sku);
+    return cart.some((item: any) => item.article === article);
   }
 
   const handleCartChange = () => {
-    const params: ProductCartType = {title, price, sku, image: img};
+    const params: ProductCartType = {title, price, article, image: img};
     isItemInCart() ? removeItem(params) : addItem(params)
   }
 
@@ -39,8 +38,7 @@ export const CatalogProductCard = (props: ItemCardProps) => {
       <div className={s.infoContainer}>
         <span className={s.title}>{title}</span>
         <span className={s.priceContainer}>
-          <span className={s.priceValue}>{price.value}</span>
-          <span className={s.priceCurrency}>{price.currency}</span>
+          <span className={s.priceValue}>{price}</span>
         </span>
         <span className={s.brand}>{brand}</span>
         <Button

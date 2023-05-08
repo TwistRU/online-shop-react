@@ -7,7 +7,7 @@ import {Select} from "../../components/ui/Select/Select";
 import {Footer} from "../../components/Footer/Footer";
 import {CatalogProductCardList} from "../../components/Catalog/ProductCardList/CatalogProductCardList";
 import {Pagination} from "../../components/ui/Pagination/Pagination";
-import {CategoryType, ProductType} from "../../types";
+import {CategoryType, ProductInfoType, ProductType} from "../../types";
 import {getBrandIdByName} from "../../functions";
 import {Link} from "react-router-dom";
 import { useParams } from "react-router-dom";
@@ -16,9 +16,15 @@ export const ITEMS_PER_PAGE = 6;
 
 export const CatalogPage = ():JSX.Element => {
   const [brands, setBrands] = useState([]);
-  const [products, setProducts] = useState<ProductType[]>([]);
+  const [productsInfo, setProductsInfo] = useState<ProductInfoType>({
+    maxPrice: 0,
+    minPrice: 0,
+    productProperties: [],
+    products: [],
+    productsCount: 0
+  });
   const [categories, setCategories] = useState<CategoryType[]>([]);
-  const [sortedProducts, setSortedProducts] = useState([...products]);
+  const [sortedProducts, setSortedProducts] = useState<ProductType[]>([...productsInfo.products]);
   const [currentPage, setCurrentPage] = useState(1);
   const [brandSelections, setBrandSelections] = useState<string[]>([]);
 
@@ -26,14 +32,14 @@ export const CatalogPage = ():JSX.Element => {
 
   useEffect(() => {
     getData('Brands').then(response => setBrands(response));
-    getData('products.json').then(response => setProducts(response));
+    getData('Products').then(response => setProductsInfo(response));
     getData('categories.json').then(response => setCategories(response));
   }, []);
 
   useEffect(() => {
-    setSortedProducts(getCategoryProducts(products));
     setBrandSelections([]);
-  }, [id, products]);
+    setSortedProducts(productsInfo.products);
+  }, [id, productsInfo]);
 
   const handlePaginationClick = (e: any) => {
     setCurrentPage(+e.target.innerText);
@@ -48,13 +54,6 @@ export const CatalogPage = ():JSX.Element => {
     return sortedProducts.slice(sliceStart, sliceStart + 6);
   }
 
-  const getCategoryProducts = (currentProducts: ProductType[]) => {
-    if (id) {
-      return currentProducts.filter((item: ProductType) => item.category === +id);
-    }
-    return currentProducts;
-  }
-
   const handleSelectChoose = (chosenOptions: string[]) => {
     setBrandSelections(chosenOptions);
     setCurrentPage(1);
@@ -62,11 +61,8 @@ export const CatalogPage = ():JSX.Element => {
       let currentSortedProducts: ProductType[] = [];
       for (let i = 0; i < chosenOptions.length; i++) {
         const brandId = getBrandIdByName(chosenOptions[i], brands);
-        currentSortedProducts = currentSortedProducts.concat(products.filter(item => item.brand === brandId))
+        currentSortedProducts = currentSortedProducts.concat(productsInfo.products.filter(item => item.brand.id === brandId))
       }
-      setSortedProducts(getCategoryProducts(currentSortedProducts));
-    } else {
-      setSortedProducts(getCategoryProducts(products));
     }
   }
 

@@ -20,7 +20,7 @@ export const CartPage = ():JSX.Element => {
               img={item.image}
               price={item.price}
               quantity={item.quantity}
-              sku={item.sku}
+              article={item.article}
               title={item.title}
               changeQuantity={changeQuantity}
               removeItem={removeItem}
@@ -33,7 +33,7 @@ export const CartPage = ():JSX.Element => {
   const emptyCartData = () => (
     <div className={s.emptyCartContainer}>
       <span className={s.emptyText}>Ваша корзина пуста</span>
-      <Link to='/catalog'className={sBtn.btn}>Перейти к покупкам</Link>
+      <Link to='/catalog' className={sBtn.btn}>Перейти к покупкам</Link>
     </div>
   );
 

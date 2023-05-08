@@ -20,12 +20,11 @@ export const CatalogProductCardList = (props: ItemCardListProps):JSX.Element => 
         <li className={s.card}>
           <CatalogProductCard
             key={item.id}
-            img={item.image}
-            title={item.title}
-            price={item.price}
-            brand={getBrandNameById(item.brand, brands)}
-            sku={item.sku}
-            type={item.type}
+            img={item.previewImage.url}
+            title={item.name}
+            price={Math.round(item.price)}
+            brand={getBrandNameById(item.brand.id, brands)}
+            article={item.article}
           />
         </li>
       ))}

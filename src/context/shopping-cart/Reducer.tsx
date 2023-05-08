@@ -1,7 +1,7 @@
 import {CartActionsType, CartStateType, CartType, ProductCartType} from "../../types";
 
 const changeQuantity = (cart: CartType[], product: ProductCartType, step: number) => {
-  const itemIndex = cart.findIndex(item => item.sku === product.sku);
+  const itemIndex = cart.findIndex(item => item.article === product.article);
   let newCart = [...cart];
   if (itemIndex >= 0) {
     let newItem = {...newCart[itemIndex]};
@@ -18,7 +18,7 @@ export const cartReducer = (state: CartStateType, action: CartActionsType): Cart
     case 'CHANGE_QUANTITY':
       return {...state, cart: changeQuantity(state.cart, action.item, action.step)};
     case 'REMOVE_FROM_CART':
-      return {...state, cart: state.cart.filter(item => item.sku !== action.item.sku)};
+      return {...state, cart: state.cart.filter(item => item.article !== action.item.article)};
     default:
       return state;
   }
