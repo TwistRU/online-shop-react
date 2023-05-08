@@ -1,8 +1,6 @@
 export type BrandType = {
   id: number,
-  code: string,
-  sort: string,
-  title: string,
+  name: string,
 }
 
 export type ProductType = {

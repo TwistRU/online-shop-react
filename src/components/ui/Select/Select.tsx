@@ -56,11 +56,11 @@ export const Select = (props: SelectProps) => {
           {selectItems.map((item) => (
             <span
               key={item.id}
-              className={cn(s.customOption, { [s.active]: selectedValues.includes(item.title) })}
-              data-value={item.title}
+              className={cn(s.customOption, { [s.active]: selectedValues.includes(item.name) })}
+              data-value={item.name}
               onClick={handleOptionClick}
             >
-              {item.title}
+              {item.name}
             </span>
           ))}
         </div>

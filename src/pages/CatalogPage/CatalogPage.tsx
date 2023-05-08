@@ -11,6 +11,8 @@ import {CategoryType, ProductType} from "../../types";
 import {getBrandIdByName} from "../../functions";
 import {Link} from "react-router-dom";
 import { useParams } from "react-router-dom";
+import axios from "axios";
+import {TRUE} from "sass";
 
 export const ITEMS_PER_PAGE = 6;
 
@@ -25,7 +27,7 @@ export const CatalogPage = ():JSX.Element => {
   const { id } = useParams();
 
   useEffect(() => {
-    getData('brands.json').then(response => setBrands(response));
+    getData('Brands').then(response => setBrands(response));
     getData('products.json').then(response => setProducts(response));
     getData('categories.json').then(response => setCategories(response));
   }, []);
