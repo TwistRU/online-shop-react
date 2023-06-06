@@ -12,7 +12,7 @@ export const HomePage = ():JSX.Element => {
   const [categories, setCategories] = useState<CategoryType[]>([]);
 
   useEffect(() => {
-    getData('categories.json').then(response => setCategories(response));
+    getData('Categories').then(response => setCategories(response));
   }, [])
 
   return (

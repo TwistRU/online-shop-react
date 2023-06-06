@@ -33,7 +33,7 @@ export const CatalogPage = ():JSX.Element => {
   useEffect(() => {
     getData('Brands').then(response => setBrands(response));
     getData('Products').then(response => setProductsInfo(response));
-    getData('categories.json').then(response => setCategories(response));
+    getData('Categories').then(response => setCategories(response));
   }, []);
 
   useEffect(() => {
@@ -76,8 +76,8 @@ export const CatalogPage = ():JSX.Element => {
             <ul className={s.categories}>
               {categories.map(item => (
                 <li key={item.id}>
-                  <Link to={`/catalog/${item.id}`} className={cn(s.link, { [s.active]: item.id.toString() === id })}>
-                    {item.title}
+                  <Link to={`/catalog/${item.id}`} className={cn(s.link, { [s.active]: id === item.id.toString()})}>
+                    {item.name}
                   </Link>
                 </li>
               ))}

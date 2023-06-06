@@ -1,3 +1,5 @@
+import {behaviorPlugin} from "@testing-library/user-event/dist/keyboard/types";
+
 export type BrandType = {
   id: number,
   name: string,
@@ -10,7 +12,7 @@ export type ProductType = {
   price: number,
   isNew: boolean,
   brand: BrandType,
-  images: previewImageType[],
+  images: ImageType[],
   colors?: ProductColorType[],
   discount: ProductDiscountType,
   sizes?: ProductSizeType[],
@@ -53,7 +55,7 @@ export type ProductSizeType = {
   subscribed: boolean,
 }
 
-export type previewImageType = {
+export type ImageType = {
   id: number,
   name: string,
   url: string
@@ -97,8 +99,11 @@ export type CartStateType = {
 
 export type CategoryType = {
   id: number,
-  title: string,
-  img: string,
+  name: string,
+  image: ImageType,
+  subCategories?: any[],
+  level: number,
+  isVisible: boolean
 }
 
 export type FooterInfo = {

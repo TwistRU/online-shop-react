@@ -3,9 +3,7 @@ import cn from "classnames";
 import s from "./Footer.module.scss";
 import {InstaFooterIcon} from "../ui/icons/InstaFooterIcon";
 import {TelegramFooterIcon} from "../ui/icons/TelegramFooterIcon";
-import {Link} from "react-router-dom";
 import {footerBlocks} from "../../data/data";
-import ArrowIcon from "../ui/icons/ArrowIcon";
 import {FooterBlock} from "./FooterBlock/FooterBlock";
 
 export const Footer = ():JSX.Element => {
