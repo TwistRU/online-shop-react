@@ -6,31 +6,49 @@ export type BrandType = {
 export type ProductType = {
   id: number,
   article: string,
-  sku: string,
   name: string,
   price: number,
-  color: ProductColorType,
-  createdDate: string,
-  discount: number,
-  newProduct: boolean,
-  previewImage: previewImageType,
+  isNew: boolean,
   brand: BrandType,
-  size: sizeType[]
+  images: previewImageType[],
+  colors?: ProductColorType[],
+  discount: ProductDiscountType,
+  sizes?: ProductSizeType[],
+  createdDate: string,
+  sku: string,
+}
+
+export type ProductDiscountType = {
+  dateStart: string,
+  dateEnd: string,
 }
 
 export type ProductInfoType = {
   minPrice: number,
   maxPrice: number,
-  productProperties: any[],
-  products: ProductType[],
   productsCount: number,
+  productProperties: ProductProperty[],
+  products: ProductType[]
 }
 
-export type sizeType = {
+export type ProductProperty = {
   id: number,
-  value: number,
+  propertyName?: string,
+  data?: ProductPropertyValue[]
+}
+
+export type ProductPropertyValue = {
+  id: number,
+  value?: string,
+  productsCount: number,
+  description?: string
+}
+
+export type ProductSizeType = {
+  id: number,
+  value?: number,
+  description?: string,
   available: number,
-  description: string,
   onFitting: boolean,
   subscribed: boolean,
 }
