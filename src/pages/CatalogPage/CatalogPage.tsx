@@ -17,11 +17,7 @@ export const ITEMS_PER_PAGE = 6;
 export const CatalogPage = ():JSX.Element => {
   const [brands, setBrands] = useState([]);
   const [productsInfo, setProductsInfo] = useState<ProductInfoType>({
-    maxPrice: 0,
-    minPrice: 0,
-    productProperties: [],
-    products: [],
-    productsCount: 0
+    maxPrice: 0, minPrice: 0, productProperties: [], products: [], productsCount: 0
   });
   const [categories, setCategories] = useState<CategoryType[]>([]);
   const [sortedProducts, setSortedProducts] = useState<ProductType[]>([...productsInfo.products]);
@@ -63,6 +59,9 @@ export const CatalogPage = ():JSX.Element => {
         const brandId = getBrandIdByName(chosenOptions[i], brands);
         currentSortedProducts = currentSortedProducts.concat(productsInfo.products.filter(item => item.brand.id === brandId))
       }
+      setSortedProducts(currentSortedProducts)
+    } else {
+      setSortedProducts(productsInfo.products)
     }
   }
 
