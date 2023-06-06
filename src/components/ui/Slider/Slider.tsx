@@ -29,7 +29,7 @@ export const Slider = ({categories}: {categories: CategoryType[]}) => {
       {categories.map(item => (
         <SwiperSlide key={item.id} className={s.slide}>
           <Link to={`/catalog/${item.id}`}>
-            <CategoryCard title={item.title} img={item.img} />
+            <CategoryCard title={item.name} img={item.image.url} />
           </Link>
         </SwiperSlide>
       ))}
