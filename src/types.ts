@@ -1,5 +1,3 @@
-import {behaviorPlugin} from "@testing-library/user-event/dist/keyboard/types";
-
 export type BrandType = {
   id: number,
   name: string,
