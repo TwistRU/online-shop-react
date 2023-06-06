@@ -11,6 +11,7 @@ import {CategoryType, ProductInfoType, ProductType} from "../../types";
 import {getBrandIdByName} from "../../functions";
 import {Link} from "react-router-dom";
 import { useParams } from "react-router-dom";
+import {it} from "node:test";
 
 export const ITEMS_PER_PAGE = 6;
 
@@ -53,16 +54,10 @@ export const CatalogPage = ():JSX.Element => {
   const handleSelectChoose = (chosenOptions: string[]) => {
     setBrandSelections(chosenOptions);
     setCurrentPage(1);
-    if (chosenOptions.length) {
-      let currentSortedProducts: ProductType[] = [];
-      for (let i = 0; i < chosenOptions.length; i++) {
-        const brandId = getBrandIdByName(chosenOptions[i], brands);
-        currentSortedProducts = currentSortedProducts.concat(productsInfo.products.filter(item => item.brand.id === brandId))
-      }
-      setSortedProducts(currentSortedProducts)
-    } else {
-      setSortedProducts(productsInfo.products)
-    }
+    let ids = chosenOptions.map(function (value, index, array) {
+      return getBrandIdByName(value, brands)
+    })
+    getData('Products', {Brands: ids.toString().concat()}).then(response => setSortedProducts((response as ProductInfoType).products));
   }
 
   return (
