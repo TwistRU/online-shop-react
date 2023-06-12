@@ -1,7 +1,6 @@
 import {CartActionsType, CartStateType, CartType, ProductCartType} from "../../types";
 
 const changeQuantity = (cart: CartType[], product: ProductCartType, step: number) => {
-  console.log(cart, product, step)
   const itemIndex = cart.findIndex(item => item.article === product.article);
   let newCart = [...cart];
   if (itemIndex >= 0) {
