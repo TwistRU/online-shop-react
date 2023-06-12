@@ -1,0 +1,10 @@
+.contentContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  .topContainer {
+    @extend .contentContainer;
+    flex-direction: row;
+  }
+}

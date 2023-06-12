@@ -17,7 +17,7 @@ export const ITEMS_PER_PAGE = 4;
 export const CatalogPage = ():JSX.Element => {
   const [brands, setBrands] = useState([]);
   const [productsInfo, setProductsInfo] = useState<ProductInfoType>({
-    maxPrice: 0, minPrice: 0, productProperties: [], products: [], productsCount: 0
+    maxPrice: 100000, minPrice: 0, productProperties: [], products: [], productsCount: 0
   });
   const [categories, setCategories] = useState<CategoryType[]>([]);
   const [sortedProducts, setSortedProducts] = useState<ProductType[]>([...productsInfo.products]);

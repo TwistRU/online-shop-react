@@ -12,7 +12,7 @@ img {
 
 .gallery {
   display: flex;
-  margin: 10px auto;
+  margin: 10px;
   max-width: $max-img-width;
   padding-top: $max-img-height / $max-img-width * 100%;
   position: relative;
@@ -22,13 +22,13 @@ img {
   }
 
   &__img {
+    height: 400px;
     left: 0;
     opacity: 0;
     position: absolute;
     top: 0;
     transition: opacity .3s ease-in-out;
     width: 600px;
-    height: 400px;
     &__thumb {
       height: 100px;
       width: 150px;

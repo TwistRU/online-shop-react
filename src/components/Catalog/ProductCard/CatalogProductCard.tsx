@@ -3,8 +3,10 @@ import s from './CatalogProductCard.module.scss';
 import {ProductCartType} from "../../../types";
 import {useCartState} from "../../../context/shopping-cart/Context";
 import {Button} from "../../ui/Button/Button";
+import {Link} from "react-router-dom";
 
 type ItemCardProps = {
+  id: number,
   img: string,
   title: string,
   price: number,
@@ -14,7 +16,7 @@ type ItemCardProps = {
 
 export const CatalogProductCard = (props: ItemCardProps) => {
   const {
-    img, title, price, brand, article
+    id, img, title, price, brand, article
   } = props;
 
   const {
@@ -28,17 +30,21 @@ export const CatalogProductCard = (props: ItemCardProps) => {
   }
 
   const handleCartChange = () => {
-    const params: ProductCartType = {title, price, article, image: img};
+    const params: ProductCartType = {name: title, price, article, image: img};
     isItemInCart() ? removeItem(params) : addItem(params)
   }
 
   return (
     <div className={s.itemCard}>
-      <img src={img} alt={title} className={s.img}/>
+      <Link  to={"/product/"+id.toString()}>
+        <img src={img} alt={title} className={s.img}/>
+      </Link>
       <div className={s.infoContainer}>
         <span className={s.title}>{title}</span>
         <span className={s.priceContainer}>
-          <span className={s.priceValue}>{price}</span>
+          <span className={s.priceValue}>
+            {price}
+          </span>
         </span>
         <span className={s.brand}>{brand}</span>
         <Button

@@ -21,7 +21,7 @@ export const CartPage = ():JSX.Element => {
               price={item.price}
               quantity={item.quantity}
               article={item.article}
-              title={item.title}
+              name={item.name}
               changeQuantity={changeQuantity}
               removeItem={removeItem}
           />

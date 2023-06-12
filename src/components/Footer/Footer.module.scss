@@ -1,24 +1,24 @@
 .footer {
-  padding-top: 100px;
-  padding-bottom: 74px;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 74px;
+  padding-top: 100px;
   @media (max-width: 784px) {
     max-width: 700px;
     padding-bottom: 40px;
   }
   @media (max-width: 480px) {
     flex-direction: column;
-    padding-top: 40px;
     padding-bottom: 10px;
+    padding-top: 40px;
   }
   .footerText {
+    color: #252525;
     display: block;
     font-size: 16px;
     font-weight: 200;
     line-height: 19px;
-    color: #252525;
   }
   .footerBlock {
     transition: max-height .7s ease;
@@ -35,14 +35,14 @@
       }
     }
     @media (max-width: 480px) {
-      position: relative;
-      padding-top: 20px;
-      padding-bottom: 5px;
       margin-bottom: 0;
-      width: 100%;
       max-height: 50px;
-      text-align: center;
       overflow: hidden;
+      padding-bottom: 5px;
+      padding-top: 20px;
+      position: relative;
+      text-align: center;
+      width: 100%;
       &.opened {
         max-height: 500px;
       }
@@ -51,23 +51,23 @@
       display: block;
       margin-bottom: 20px;
       @media (max-width: 480px) {
-        display: flex;
         align-items: center;
-        justify-content: center;
         cursor: pointer;
+        display: flex;
+        justify-content: center;
       }
       .title {
-        text-transform: uppercase;
         color: #252525;
+        text-transform: uppercase;
       }
       .arrow {
         display: none;
         transition: transform .3s ease;
         @media (max-width: 480px) {
-          position: absolute;
-          right: 14px;
           display: inline;
           justify-self: flex-end;
+          position: absolute;
+          right: 14px;
           &.opened {
             transform: rotate(180deg);
           }
@@ -87,9 +87,9 @@
   }
   .full {
     @media (max-width: 480px) {
+      align-items: center;
       display: flex;
       flex-direction: column;
-      align-items: center;
       max-height: 500px;
     }
   }

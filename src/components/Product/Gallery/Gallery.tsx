@@ -7,7 +7,7 @@ interface GalleryProps {
 export const Gallery = ({images}: GalleryProps) => {
 	return (
 		<section className={s.gallery}>
-			{images.map((value, index, array)=>{
+			{images.map((value)=>{
 				return (
 					<div className={s.gallery__item}>
 						<input className={s.gallery__selector} type={"radio"} id={value.id.toString()} name={"gallery"}/>

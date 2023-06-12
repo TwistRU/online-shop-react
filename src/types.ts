@@ -11,11 +11,16 @@ export type ProductType = {
   isNew: boolean,
   brand: BrandType,
   images: ImageType[],
-  colors?: ProductColorType[],
+  colors: ProductColorType[],
   discount: ProductDiscountType,
-  sizes?: ProductSizeType[],
+  sizes: ProductSizeType[],
   createdDate: string,
-  sku: string,
+}
+
+export type ProductInfo = ProductType & {
+  description?: string,
+  category: CategoryType,
+  features: ProductFeatureType[]
 }
 
 export type ProductDiscountType = {
@@ -59,6 +64,10 @@ export type ImageType = {
   url: string
 }
 
+export type ProductFeatureType = {
+  value: string
+}
+
 export type ProductColorType = {
   id: number,
   name: string,
@@ -72,7 +81,7 @@ export type PriceType = {
 
 export type ProductCartType = {
   article: string,
-  title: string,
+  name: string,
   price: number,
   image: string,
 }
