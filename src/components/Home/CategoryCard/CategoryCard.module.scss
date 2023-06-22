@@ -1,11 +1,11 @@
 .categoryCard {
   position: relative;
-  width: 274px;
-  height: 450px;
+  width: 350px;
+  height: 277px;
   cursor: pointer;
   @media (max-width: 480px) {
-    width: 165px;
-    height: 230px;
+    width: 200px;
+    height: 158px;
   }
   .img {
     position: absolute;

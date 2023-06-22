@@ -1,12 +1,12 @@
-export type BrandType = {
+export type BaseNameAndId = {
   id: number,
-  name: string,
+  name: string
 }
 
-export type ProductType = {
-  id: number,
+export type BrandType = BaseNameAndId
+
+export type ProductType = BaseNameAndId & {
   article: string,
-  name: string,
   price: number,
   isNew: boolean,
   brand: BrandType,
@@ -58,9 +58,7 @@ export type ProductSizeType = {
   subscribed: boolean,
 }
 
-export type ImageType = {
-  id: number,
-  name: string,
+export type ImageType = BaseNameAndId & {
   url: string
 }
 
@@ -68,9 +66,7 @@ export type ProductFeatureType = {
   value: string
 }
 
-export type ProductColorType = {
-  id: number,
-  name: string,
+export type ProductColorType = BaseNameAndId & {
   value: string
 }
 
@@ -104,9 +100,7 @@ export type CartStateType = {
   cart: CartType[],
 }
 
-export type CategoryType = {
-  id: number,
-  name: string,
+export type CategoryType = BaseNameAndId & {
   image: ImageType,
   subCategories?: any[],
   level: number,
@@ -115,6 +109,6 @@ export type CategoryType = {
 
 export type FooterInfo = {
   id: string,
-  title: string,
-  links: { title: string, link: string }[]
+  name: string,
+  links: { name: string, link: string }[]
 }

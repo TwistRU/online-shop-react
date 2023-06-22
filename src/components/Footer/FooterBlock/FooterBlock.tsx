@@ -23,13 +23,13 @@ export const FooterBlock = (props: FooterBlockProps) => {
   return (
     <div className={cn(s.footerBlock, { [s.opened]: isOpened })} key={item.id}>
       <span className={s.titleContainer} onClick={handleOpen}>
-        <h5 className={cn('h5', s.title)}>{item.title}</h5>
+        <h5 className={cn('h5', s.title)}>{item.name}</h5>
         <ArrowIcon className={cn(s.arrow, { [s.opened]: isOpened })} />
       </span>
       <ul className={s.footerList}>
         {item.links.map((link) => (
           <li className={s.footerListItem}>
-            <Link to={link.link} className={s.footerText}>{link.title}</Link>
+            <Link to={link.link} className={s.footerText}>{link.name}</Link>
           </li>
         ))}
       </ul>

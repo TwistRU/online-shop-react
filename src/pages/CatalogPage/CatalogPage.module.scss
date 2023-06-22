@@ -20,9 +20,16 @@
       }
     }
   }
-  .selectContainer {
-    position: relative;
+  .selectContainerContainer {
+    display: flex;
     height: 25px;
     margin-bottom: 30px;
+    flex-direction: row;
+  }
+  .selectContainer {
+    display: flex;
+    height: 25px;
+    margin-bottom: 30px;
+    flex-direction: row;
   }
 }

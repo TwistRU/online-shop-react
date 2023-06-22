@@ -2,10 +2,10 @@ import React, {useEffect, useState} from 'react';
 import s from './Select.module.scss'
 import cn from "classnames";
 import arrow from '../../../assets/images/selectArrow.svg'
-import {BrandType} from "../../../types";
+import {BaseNameAndId} from "../../../types";
 
 type SelectProps = {
-  selectItems: BrandType[],
+  selectItems: BaseNameAndId[],
   selectDefaultTitle: string,
   handleChoose: (chosenOptions: string[]) => void,
   selectedValues: string[],

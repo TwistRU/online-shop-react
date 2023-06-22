@@ -1,9 +1,9 @@
-import {BrandType} from "./types";
+import {BaseNameAndId} from "./types";
 
-export const getBrandNameById = (id: number, brands: BrandType[]):string => {
+export const getNameById = (id: number, brands: BaseNameAndId[]):string => {
   return brands.find((item) => item.id === id)?.name || '';
 }
 
-export const getBrandIdByName = (name: string, brands: BrandType[]): number => {
+export const getIdByName = (name: string, brands: BaseNameAndId[]): number => {
   return brands.find((item) => item.name === name)?.id || 0;
 }

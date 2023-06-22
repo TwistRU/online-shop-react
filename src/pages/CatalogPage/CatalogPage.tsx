@@ -8,7 +8,7 @@ import {Footer} from "../../components/Footer/Footer";
 import {CatalogProductCardList} from "../../components/Catalog/ProductCardList/CatalogProductCardList";
 import {Pagination} from "../../components/ui/Pagination/Pagination";
 import {CategoryType, ProductInfoType, ProductType} from "../../types";
-import {getBrandIdByName} from "../../functions";
+import {getIdByName} from "../../functions";
 import {Link} from "react-router-dom";
 import { useParams } from "react-router-dom";
 
@@ -16,6 +16,7 @@ export const ITEMS_PER_PAGE = 4;
 
 export const CatalogPage = ():JSX.Element => {
   const [brands, setBrands] = useState([]);
+  const [colors, setColors] = useState([]);
   const [productsInfo, setProductsInfo] = useState<ProductInfoType>({
     maxPrice: 100000, minPrice: 0, productProperties: [], products: [], productsCount: 0
   });
@@ -23,17 +24,20 @@ export const CatalogPage = ():JSX.Element => {
   const [sortedProducts, setSortedProducts] = useState<ProductType[]>([...productsInfo.products]);
   const [currentPage, setCurrentPage] = useState(1);
   const [brandSelections, setBrandSelections] = useState<string[]>([]);
+  const [colorsSelections, setColorsSelections] = useState<string[]>([]);
 
   const { id } = useParams();
 
   useEffect(() => {
     getData('Brands').then(response => setBrands(response));
+    getData("Colors").then(response => setColors(response))
     getData('Products').then(response => setProductsInfo(response));
     getData('Categories').then(response => setCategories(response));
   }, []);
 
   useEffect(() => {
     setBrandSelections([]);
+    setColorsSelections([]);
     setSortedProducts(productsInfo.products);
   }, [id, productsInfo]);
 
@@ -50,13 +54,30 @@ export const CatalogPage = ():JSX.Element => {
     return sortedProducts.slice(sliceStart, sliceStart + 6);
   }
 
-  const handleSelectChoose = (chosenOptions: string[]) => {
+  const handleBrandSelectChoose = (chosenOptions: string[]) => {
+    console.log(chosenOptions)
     setBrandSelections(chosenOptions);
+    handleSelectChoose()
+  }
+
+  const handleColorsSelectChoose = (chosenOptions: string[]) => {
+    setColorsSelections(chosenOptions);
+    handleSelectChoose()
+  }
+  const handleSelectChoose = () => {
     setCurrentPage(1);
-    let ids = chosenOptions.map(function (value) {
-      return getBrandIdByName(value, brands)
+    let brand_ids = brandSelections.map(function (value) {
+      return getIdByName(value, brands)
     })
-    getData('Products', {Brands: ids.toString().concat()}).then(response => setSortedProducts((response as ProductInfoType).products));
+    let colors_ids = colorsSelections.map(function (value) {
+      return getIdByName(value, colors)
+    })
+    let params = {
+      Brands: brand_ids.toString().concat(),
+      Colors: colors_ids.toString().concat()
+    }
+    console.log(params)
+    getData('Products', params).then(response => setSortedProducts((response as ProductInfoType).products));
   }
 
   return (
@@ -75,16 +96,31 @@ export const CatalogPage = ():JSX.Element => {
                 </li>
               ))}
             </ul>
+            <div className={s.selectContainer2}>
+              <div className={s.selectContainer}>
+                <div>
+                  <Select
+                      selectItems={brands}
+                      selectDefaultTitle='Бренд'
+                      handleChoose={handleBrandSelectChoose}
+                      selectedValues={brandSelections}
+                  />
+                </div>
+              </div>
+              <div className={s.selectContainer}>
+                <div>
+                  <Select
+                      selectItems={colors}
+                      selectDefaultTitle='Цвета'
+                      handleChoose={handleColorsSelectChoose}
+                      selectedValues={colorsSelections}
+                  />
+                </div>
+              </div>
+
+            </div>
           </div>
           <div className={s.productsColumn}>
-            <div className={s.selectContainer}>
-              <Select
-                selectItems={brands}
-                selectDefaultTitle='Бренд'
-                handleChoose={handleSelectChoose}
-                selectedValues={brandSelections}
-              />
-            </div>
             <CatalogProductCardList products={getProductsPerPage()} brands={brands} />
           </div>
         </div>

@@ -41,7 +41,7 @@ export const Header = (props: HeaderProps):JSX.Element => {
           {headerLinks.map((item) => (
             <li className={s.listItem} key={item.id}>
               <Link to={item.link} className={cn(s.link, { [s.styled]: styled } )}>
-                {item.title}
+                {item.name}
               </Link>
             </li>
           ))}
@@ -49,7 +49,12 @@ export const Header = (props: HeaderProps):JSX.Element => {
         <Link to='/' className={cn(s.logoLink)}>
           <LogoIcon className={cn(s.logo, { [s.styled]: styled })} />
         </Link>
-        <ul className={s.listIcons}>
+        <ul className={cn(s.list, s.listIcons)}>
+          <li className={s.listItem}>
+            <Link to={'/auth'} className={cn(s.link, s.shoppingCart, { [s.styled]: styled })}>
+              Войти
+            </Link>
+          </li>
           <li className={s.listItem}>
             <Link to='/cart' className={s.cartLink}>
               {!!cart.length && <span className={s.itemsNumber}>{cart.length}</span>}

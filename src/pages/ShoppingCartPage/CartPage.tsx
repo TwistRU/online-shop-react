@@ -40,7 +40,7 @@ export const CartPage = ():JSX.Element => {
   return (
     <div className={s.cartPage}>
       <Header styled />
-      <main className={'container'}>
+      <main className={cn('container', s.container)}>
         {!!cart.length ? fullCartData() : emptyCartData()}
       </main>
       <Footer />

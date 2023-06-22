@@ -9,7 +9,7 @@ interface ProductPurchaseInfoProps {
 }
 
 export const ProductPurchaseInfo = ({productInfo}: ProductPurchaseInfoProps) => {
-	const {article, name, brand, price, images } = productInfo;
+	const {article, name, brand, price , images } = productInfo;
 	const {
 		state: { cart },
 		addItem,

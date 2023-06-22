@@ -1,8 +1,12 @@
 .cartPage {
+  .container {
+    min-height: 500px;
+  }
   .emptyCartContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-content: center;
     padding-top: 50px;
     .emptyText {
       margin-bottom: 40px;

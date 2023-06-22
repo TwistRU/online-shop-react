@@ -1,50 +1,50 @@
 export const footerBlocks = [
   {
     id: '1',
-    title: 'Компания',
+    name: 'Компания',
     links: [
       {
-        title: 'О нас',
+        name: 'О нас',
         link: '/'
       },
       {
-        title: 'Контакты',
+        name: 'Контакты',
         link: '/'
       },
     ]
   },
   {
     id: '2',
-    title: 'Полезное',
+    name: 'Полезное',
     links: [
       {
-        title: 'Оплата и доставка',
+        name: 'Оплата и доставка',
         link: '/'
       },
       {
-        title: 'Условия возврата',
+        name: 'Условия возврата',
         link: '/'
       },
       {
-        title: 'Бонусная система',
+        name: 'Бонусная система',
         link: '/'
       },
     ]
   },
   {
     id: '3',
-    title: 'Покупателю',
+    name: 'Покупателю',
     links: [
       {
-        title: 'Избранное',
+        name: 'Избранное',
         link: '/'
       },
       {
-        title: 'Публичная оферта',
+        name: 'Публичная оферта',
         link: '/'
       },
       {
-        title: 'Политика конфиденциальности',
+        name: 'Политика конфиденциальности',
         link: '/'
       },
     ]
@@ -54,17 +54,17 @@ export const footerBlocks = [
 export const headerLinks = [
   {
     id: '1',
-    title: 'New',
+    name: 'New',
     link: '/',
   },
   {
     id: '2',
-    title: 'Каталог',
+    name: 'Каталог',
     link: '/catalog',
   },
   {
     id: '3',
-    title: 'О нас',
+    name: 'О нас',
     link: '/',
   }
 ]

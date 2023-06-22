@@ -21,7 +21,7 @@ export const Footer = ():JSX.Element => {
           <TelegramFooterIcon className={s.icon} />
         </div>
         <a className={cn(s.footerListItem, s.footerText)} href="tel: +380730963644">+38(073) 096 36 44</a>
-        <a className={cn(s.footerListItem, s.footerText)} href="mailto: info@yanki.com">info@yanki.com</a>
+        <a className={cn(s.footerListItem, s.footerText)} href="mailto: info@lemodel.com">info@lemodel.com</a>
       </div>
     </footer>
   );

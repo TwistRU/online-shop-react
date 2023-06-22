@@ -1,0 +1,14 @@
+.main {
+  @media screen {
+    max-width: 300px;
+  }
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  .input {
+    margin-bottom: 30px;
+  }
+}

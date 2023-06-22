@@ -2,7 +2,7 @@ import React from 'react';
 import s from './CatalogProductCardList.module.scss';
 import {BrandType, ProductType} from "../../../types";
 import {CatalogProductCard} from "../ProductCard/CatalogProductCard";
-import {getBrandNameById} from "../../../functions";
+import {getNameById} from "../../../functions";
 
 type ItemCardListProps = {
   products: ProductType[],
@@ -24,7 +24,7 @@ export const CatalogProductCardList = (props: ItemCardListProps):JSX.Element => 
             img={item.images[0].url}
             title={item.name}
             price={Math.round(item.price)}
-            brand={getBrandNameById(item.brand.id, brands)}
+            brand={getNameById(item.brand.id, brands)}
             article={item.article}
           />
         </li>
